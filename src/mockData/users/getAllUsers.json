@@ -1,0 +1,34 @@
+{
+	"status": "success",
+	"result": true,
+	"user": [
+		{
+			"id": "RPHZ2xbH96",
+			"attributes": {
+				"pickupLocation": {
+					"latitude": 40.9634,
+					"longitude": -5.6643,
+					"locationName": "Salamanca"
+				},
+				"username": "awansburyu",
+				"fullName": "Ada Wansbury",
+				"user_type": "admin",
+				"position": "Registered Nurse",
+				"rangeDate": "1/22/2024",
+				"state": "active",
+				"routeId": "rou_011",
+				"createdAt": "2024-05-05T02:12:52.785Z",
+				"updatedAt": "2024-05-05T02:12:52.785Z",
+				"ACL": {
+					"*": {
+						"read": true
+					},
+					"RPHZ2xbH96": {
+						"read": true,
+						"write": true
+					}
+				}
+			}
+		}
+	]
+}
