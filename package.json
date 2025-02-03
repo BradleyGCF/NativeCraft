@@ -32,7 +32,7 @@
 		"class-variance-authority": "0.7.0",
 		"clsx": "2.1.0",
 		"copy-to-clipboard": "^3.3.3",
-		"dayjs": "^1.11.6",
+		"dayjs": "^1.11.13",
 		"dotenv": "^16.0.3",
 		"ethers": "^5.7.2",
 		"formik": "^2.2.9",
