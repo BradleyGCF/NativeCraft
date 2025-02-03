@@ -57,7 +57,7 @@
 		"tailwind-merge": "2.2.2",
 		"tailwindcss-animate": "1.0.7",
 		"vite-plugin-env": "^1.0.1",
-		"web3": "^1.7.4",
+		"web3": "^4.16.0",
 		"yup": "^0.32.11",
 		"zod": "^3.22.4",
 		"zustand": "^4.1.1"
