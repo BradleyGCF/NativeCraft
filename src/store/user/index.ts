@@ -1,3 +1,4 @@
+// import { $UserRole } from '@/modules/auth/enum'
 import type { Session } from '@/types'
 import { create } from 'zustand'
 import { setUser } from './actions'

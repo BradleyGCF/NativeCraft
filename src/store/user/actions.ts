@@ -1,5 +1,5 @@
+import type { Actions, State } from '.'
 import type { ZustandGet, ZustandSet } from '..'
-import type { State, Actions } from '.'
 
 // Aquí van las acciones del store si éste es muy grande
 // quitar el '_' si se utiliza get

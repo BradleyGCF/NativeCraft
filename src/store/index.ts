@@ -1,4 +1,5 @@
 export * from './user'
+export * from './session/index'
 
 export type ZustandSet<State, Actions> = (
   partial:

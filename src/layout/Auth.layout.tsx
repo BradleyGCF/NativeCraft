@@ -1,13 +1,11 @@
 import AuthBG from '@/assets/auth_bg.webp'
 import { Arrow } from '@/modules/core/icons'
-import { ButtonVariants } from '@/modules/core/ui/button'
+import { buttonVariants } from '@/modules/core/ui/button'
 import { cn } from '@/modules/core/utils'
-import { Routes } from '@/routes'
+import { Pathnames } from '@/routes'
 import { Link, Outlet } from 'react-router-dom'
 
 export default function AuthLayout() {
-  // useAuth()
-
   return (
     <div
       className="h-screen"
@@ -21,7 +19,7 @@ export default function AuthLayout() {
       <div className="grid h-full grid-cols-1 px-4">
         <div className="w-full max-w-md m-auto">
           <div className="w-full mb-4">
-            <Link className={cn(ButtonVariants(), 'block w-fit')} to={Routes.home}>
+            <Link className={cn(buttonVariants(), 'block w-fit')} to={Pathnames.home}>
               <Arrow direction="left" />
             </Link>
           </div>

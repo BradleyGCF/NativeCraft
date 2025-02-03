@@ -1,12 +1,4 @@
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/modules/core/ui/pagination'
+import { Pagination, PaginationContent, PaginationItem, PaginationNext, PaginationPrevious } from '@/modules/core/ui/pagination'
 import type { FormEvent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { cn } from '../utils'

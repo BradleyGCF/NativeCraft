@@ -1,12 +1,11 @@
-import { Routes } from '@/routes'
-import { Link } from 'react-router-dom'
+import { Pathnames } from '@/routes'
 
 export function Footer() {
   return (
     <footer className="mt-auto w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto border-t">
       <div className="text-center container">
         <div>
-          <a className="flex-none text-xl font-semibold text-black dark:text-white" href={Routes.home} aria-label="Brand">
+          <a className="flex-none text-xl font-semibold text-black dark:text-white" href={Pathnames.home} aria-label="Brand">
             Brand
           </a>
         </div>

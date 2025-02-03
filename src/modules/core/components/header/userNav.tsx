@@ -1,31 +1,32 @@
-import { Link } from 'react-router-dom'
-import useSession from '../../hooks/useSession'
-import { Avatar } from '../avatar'
 import { Popover, PopoverContent, PopoverTrigger } from '@/modules/core/ui/popover'
-import { Routes } from '@/routes'
-import { Logout, Person } from '../../icons'
+import { Pathnames } from '@/routes'
+import { useSession } from '@/store'
+import { Link } from 'react-router-dom'
+import { Logout } from '../../icons'
+import { Avatar } from '../avatar'
 
 export const UserNavar = () => {
-  const { user, signOut } = useSession()
+  const { session, signOut } = useSession()
 
-  if (!user)
+  if (!session)
     return (
-      <Link className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600" to={Routes.logIn}>
-        <Person />
+      <Link className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600" to={Pathnames.auth.logIn}>
         Log in
       </Link>
     )
-
+  // if (user == null) {
+  //   return null
+  // }
   return (
     <Popover>
       <PopoverTrigger>
-        <Avatar src="" alt={user?.email || 'U'} />
+        <Avatar src={session.avatar} alt={session?.email || 'U'} />
       </PopoverTrigger>
       <PopoverContent className="w-60 flex flex-col bg-white text-black">
         <div>
           <div className="space-y-2 flex justify-around items-center ">
             <div className="flex items-center font-semibold">
-              <Link to={Routes.user.profile}>{user?.email}</Link>
+              <Link to={Pathnames.user.profile}>{session?.email}</Link>
             </div>
           </div>
           <div className="flex justify-around items-center mt-3">

@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom'
 import { Search as SearchIcon } from '@/modules/core/icons'
+import { useNavigate } from 'react-router-dom'
 
 export default function Search() {
   const navigate = useNavigate()
@@ -22,7 +22,7 @@ export default function Search() {
   return (
     <form
       onSubmit={(e) => handlerSubmit(e)}
-      className="bg-white shadow-lg border rounded-md max-w-lg w-full flex gap-1 items-center py-1 pr-1 pl-3"
+      className="bg-white border rounded-md max-w-lg w-full flex gap-1 items-center py-1 pr-1 pl-3"
     >
       <input
         placeholder="Buscar"

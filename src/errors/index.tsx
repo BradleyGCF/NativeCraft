@@ -1,14 +1,14 @@
 import {
-  ConnectionError,
-  ValidationError,
   AuthenticationError,
   AuthorizationError,
-  NotFoundError,
-  TimeoutError,
-  ConflictError,
-  ServerError,
   ClientError,
+  ConflictError,
+  ConnectionError,
   DatabaseError,
+  NotFoundError,
+  ServerError,
+  TimeoutError,
+  ValidationError,
 } from './factory'
 
 const errorHandler = (error: unknown) => {

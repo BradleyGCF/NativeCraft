@@ -1,21 +1,15 @@
 import * as yup from 'yup'
 
 const passwordRules = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#.*%&@\$%\^&\*])(?=.{8,})/
-const usernameSignUp = /^(\S+$)/g
+// const usernameSignUp = /^(\S+$)/g
 const emailRules = /^[^@]+@[^@]+\.[^@]+$/
 
-export const SignUpSchema = yup.object().shape({
+export const SignUpSchema = yup.object({
   fullName: yup
     .string()
     .min(5, 'Full Name must be at least 5 characters long')
     .max(65, 'Full name  must contain a maximum of 65 characters')
     .required('Required, Please Enter your Full Name'),
-  username: yup
-    .string()
-    .min(5, 'Username must be at least 5 characters long')
-    .max(25, 'User name  must contain a maximum of 25 characters')
-    .required('Required, Please Enter your User Name ')
-    .matches(usernameSignUp, 'spaces not allowed'),
   email: yup.string().max(255).email('Must be a valid email').required('Email is required'),
   password: yup
     .string()
@@ -26,7 +20,7 @@ export const SignUpSchema = yup.object().shape({
     ),
 })
 
-export const LogInSchema = yup.object().shape({
+export const LogInSchema = yup.object({
   email: yup
     .string()
     .min(5, 'El nombre de usuario debe contener al menos 5 caracteres')
@@ -40,4 +34,5 @@ export const LogInSchema = yup.object().shape({
       passwordRules,
       'Debe contener 8 caracteres, una mayúscula, una minúscula, un numero y un carácter especial: : ! @ # . * % & @'
     ),
+  rememberMe: yup.boolean().optional(),
 })

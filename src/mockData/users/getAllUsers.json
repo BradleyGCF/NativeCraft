@@ -1,34 +1,25 @@
-{
-	"status": "success",
-	"result": true,
-	"user": [
-		{
-			"id": "RPHZ2xbH96",
-			"attributes": {
-				"pickupLocation": {
-					"latitude": 40.9634,
-					"longitude": -5.6643,
-					"locationName": "Salamanca"
-				},
-				"username": "awansburyu",
-				"fullName": "Ada Wansbury",
-				"user_type": "admin",
-				"position": "Registered Nurse",
-				"rangeDate": "1/22/2024",
-				"state": "active",
-				"routeId": "rou_011",
-				"createdAt": "2024-05-05T02:12:52.785Z",
-				"updatedAt": "2024-05-05T02:12:52.785Z",
-				"ACL": {
-					"*": {
-						"read": true
-					},
-					"RPHZ2xbH96": {
-						"read": true,
-						"write": true
-					}
-				}
+[
+	{
+		"id": 1,
+		"name": "Leanne Graham",
+		"username": "Bret",
+		"email": "Sincere@april.biz",
+		"address": {
+			"street": "Kulas Light",
+			"suite": "Apt. 556",
+			"city": "Gwenborough",
+			"zipcode": "92998-3874",
+			"geo": {
+				"lat": "-37.3159",
+				"lng": "81.1496"
 			}
+		},
+		"phone": "1-770-736-8031 x56442",
+		"website": "hildegard.org",
+		"company": {
+			"name": "Romaguera-Crona",
+			"catchPhrase": "Multi-layered client-server neural-net",
+			"bs": "harness real-time e-markets"
 		}
-	]
-}
+	}
+]

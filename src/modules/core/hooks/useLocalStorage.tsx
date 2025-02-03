@@ -1,8 +1,5 @@
 import { useState } from 'react'
-
-export const $LocalStorageKey = {
-  SessionToken: 'SessionToken',
-} as const
+import type { $LocalStorageKey } from '../enum'
 
 type LocalStorageKey = (typeof $LocalStorageKey)[keyof typeof $LocalStorageKey]
 

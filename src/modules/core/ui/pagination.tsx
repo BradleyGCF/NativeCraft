@@ -1,16 +1,16 @@
 import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from '@radix-ui/react-icons'
 import * as React from 'react'
 
-import { type ButtonProps, ButtonVariants } from '@/modules/core/ui/button/shadcn'
+import { type ButtonProps, buttonVariants } from '@/modules/core/ui/button'
 import { cn } from '@/modules/core/utils'
 
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
-  <nav role="navigation" aria-label="pagination" className={cn('mx-auto flex w-full justify-center', className)} {...props} />
+  <nav aria-label="pagination" className={cn('mx-auto flex w-full justify-center', className)} {...props} />
 )
 Pagination.displayName = 'Pagination'
 
 const PaginationContent = React.forwardRef<HTMLUListElement, React.ComponentProps<'ul'>>(({ className, ...props }, ref) => (
-  <ul ref={ref} className={cn('flex flex-row items-center gap-1 bg-white rounded-md border shadow-lg', className)} {...props} />
+  <ul ref={ref} className={cn('flex flex-row items-center gap-1 bg-white rounded-md border shadow-md', className)} {...props} />
 ))
 PaginationContent.displayName = 'PaginationContent'
 
@@ -28,7 +28,7 @@ const PaginationLink = ({ className, isActive, size = 'icon', ...props }: Pagina
   <a
     aria-current={isActive ? 'page' : undefined}
     className={cn(
-      ButtonVariants({
+      buttonVariants({
         variant: isActive ? 'outline' : 'ghost',
         size,
       }),

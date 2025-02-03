@@ -1,52 +1,100 @@
-import { Services } from '@/services'
-import Moralis from 'moralis-v1'
-import type { LogIn, SignUp } from '../types'
+import { api, rawApi } from '@/api'
+import { formatLogIn } from '@/modules/auth/adapters'
+import type { LogIn, SignUp } from '@/modules/auth/types'
+import { $ResponseStatus } from '@/modules/core/enum'
+import { formatUserSession } from '@/modules/users/adapters'
+import axios from 'axios'
+import { captureServerError } from '../utils'
 
-export const signUp = async ({ email, password, fullName, username }: SignUp) => {
+export const Services = {
+  auth: {
+    signUp: 'createUser',
+    logIn: 'logIn',
+    session: 'getSession',
+  },
+} as const
+
+export const signUp = async ({ email, password, fullName }: SignUp) => {
   try {
-    const response = await Moralis.Cloud.run(Services.auth.signUp, {
-      objectData: {
-        email,
-        password,
-        username,
-        fullName,
-      },
+    const response = await axios.post(Services.auth.signUp, {
+      email,
+      password,
+      fullName,
     })
 
-    if (response.status === 'error') {
+    const [status, message] = captureServerError(response)
+
+    if (status === $ResponseStatus.ERROR) {
       return {
-        error: 'Ha ocurrido un error',
+        success: false,
+        message,
       }
     }
 
     return {
-      success: 'Registro exitoso',
+      success: true,
+      message: 'Registro exitoso',
     }
-  } catch (error) {
-    console.error(error)
+  } catch (_) {
     return {
-      error: 'Ha ocurrido un error',
+      success: false,
+      message: 'Ha ocurrido un error',
     }
   }
 }
 
 export const logIn = async ({ email, password }: LogIn) => {
   try {
-    const response = await Moralis.User.logIn(email, password)
+    const response = await rawApi.post(Services.auth.logIn, {
+      email,
+      password,
+    })
 
-    if (!response.id) {
+    const [status, message] = captureServerError(response)
+
+    if (status === $ResponseStatus.ERROR) {
       return {
-        error: 'Ha ocurrido un error',
+        success: false,
+        message,
       }
     }
 
     return {
-      success: 'Registro exitoso',
+      success: true,
+      data: formatLogIn(response),
     }
   } catch (error) {
     console.error(error)
     return {
-      error: 'Ha ocurrido un error',
+      success: false,
+      message: 'Ha ocurrido un error',
+    }
+  }
+}
+
+export const getSession = async () => {
+  try {
+    const response = await api.post(Services.auth.session)
+
+    const [status, message] = captureServerError(response)
+
+    if (status === $ResponseStatus.ERROR) {
+      return {
+        success: false,
+        message,
+      }
+    }
+
+    return {
+      success: true,
+      data: formatUserSession(response.data),
+      // optional, if you want to show a message
+      // message: response.data.message,
+    }
+  } catch (_) {
+    return {
+      success: false,
+      message: 'Ha ocurrido un error al obtener el usuario',
     }
   }
 }

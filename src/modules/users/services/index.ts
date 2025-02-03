@@ -1,15 +1,30 @@
-import { Services } from '@/services'
+import { $ResponseStatus } from '@/modules/core/enum'
 import type { OrderBy, Pagination, Search } from '@/types'
-import Moralis from 'moralis-v1'
-import { formatUsers, formatUserSession } from '../adapters'
+import axios from 'axios'
+import { formatUserSession, formatUsers } from '../adapters'
+
+const Services = {
+  users: {
+    update: 'updateUser',
+    getUserById: 'getUserById',
+    getAll: 'https://jsonplaceholder.typicode.com/users',
+    getSession: 'https://jsonplaceholder.typicode.com/users/1',
+  },
+} as const
 
 export const getUserById = async ({ id }: { id: string } & OrderBy) => {
   try {
-    const response = await Moralis.Cloud.run(Services.users.getUserById, {
+    const response = await axios.post(Services.users.getUserById, {
       userId: id,
     })
 
-    const data = formatUserSession(response)
+    if (response.data.status === $ResponseStatus.ERROR) {
+      return {
+        error: 'Ha ocurrido un error',
+      }
+    }
+
+    const data = formatUserSession(response.data)
 
     return {
       data,
@@ -22,21 +37,20 @@ export const getUserById = async ({ id }: { id: string } & OrderBy) => {
   }
 }
 
-export const getAllUsers = async ({ q, orderBy, page }: Pagination & Search & OrderBy) => {
+export const getAllUsers = async ({ q, page }: Pagination & Search = {}) => {
   try {
-    const response = await Moralis.Cloud.run(Services.users.getAll, {
-      q,
-      orderBy,
-      page,
+    const response = await axios.get(Services.users.getAll, {
+      params: {
+        q,
+        page,
+      },
     })
 
-    if (response?.status === 'error') {
-      return {
-        error: response?.errorDetails?.message as string,
-      }
+    if (response.data.status === $ResponseStatus.ERROR) {
+      throw new Error('Ha ocurrido un error')
     }
 
-    const data = formatUsers(response)
+    const data = formatUsers(response.data)
 
     return {
       data,

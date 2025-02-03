@@ -1,16 +1,12 @@
-import { Routes } from '@/routes'
+import { Pathnames } from '@/routes'
 
 export const NavLinks = [
   {
     label: 'Home',
-    href: Routes.home,
-  },
-  {
-    label: 'Log in',
-    href: Routes.logIn,
+    href: Pathnames.home,
   },
   {
     label: 'Sign up',
-    href: Routes.signUp,
+    href: Pathnames.auth.signUp,
   },
 ]

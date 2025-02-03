@@ -1,24 +1,27 @@
-import useSession from '@/modules/core/hooks/useSession'
-import { Routes } from '@/routes'
+import { Loader } from '@/modules/core/icons/loader'
+import { useSession } from '@/store'
 import type { UserRole } from '@/types'
-import { type PropsWithChildren, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import type { PropsWithChildren } from 'react'
+import AccessDenied from '../components/accessDenied'
 
 type ProtectedRouteProps = PropsWithChildren & {
   redirect?: string
   rolesAllowed?: UserRole[]
 }
 
-export const ProtectedRoute = ({ children, redirect, rolesAllowed }: ProtectedRouteProps) => {
-  const { user } = useSession()
-  const navigate = useNavigate()
+export const ProtectedRoute = ({ children, rolesAllowed }: ProtectedRouteProps) => {
+  const { session, isLoading } = useSession()
 
-  useEffect(() => {
-    const redirectTo = redirect ?? Routes.logIn
-    if (!user?.sessionToken || !rolesAllowed?.includes(user?.role)) {
-      navigate(redirectTo)
-    }
-  }, [user, navigate, redirect, rolesAllowed])
+  if (isLoading)
+    return (
+      <div className="w-screen h-screen grid place-items-center">
+        <Loader />
+      </div>
+    )
+
+  if (!session?.sessionToken || !rolesAllowed?.includes(session?.role)) {
+    return <AccessDenied />
+  }
 
   return children
 }
