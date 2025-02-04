@@ -1,0 +1,14 @@
+2025/02/04 Components y Screen - Valentina Rincon
+    Cambios:
+        - Creados componente Button en \Button.tsx
+        - Creados componente TextInputComponente en \Input.tsx
+        - Creado componente ModalComponent en \Modal.tsx
+        - Creado componente SwitchComponent en \Switch.tsx
+        - Creada carpeta screens para navegaciion en \src
+        - Creado componente para screen de Home en \screens
+        - Creado componente para screen de Setting en \screens
+        - Creado componente Navigation para barra de navegacion con componentes screen en \src
+        - Creado archivo de barril para exportar componentes en \src
+        - Eliminados multiples archivos para ejecutar correctamente el proyecto.
+        - Modificado package.json y tsconfig.json para empaquetar y publicar libreria.
+    Observaciones:
