@@ -1,8 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import { ModalComponent } from "./src/components/Modal/Modal";
-import { Button } from "./src/components/Button/Button";
-import { TextInputComponent } from "./src/components/Input/Input";
+import { Button } from "./src/modules/library/components/Button/Button";
+import { ModalComponent } from "./src/modules/library/components/Modal/Modal";
+import { TextInputComponent } from "./src/modules/library/components/Input/Input";
+
 
 
 export default function App() {
