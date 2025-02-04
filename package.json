@@ -1,22 +1,18 @@
 {
-  "name": "nativecraft",
+  "name": "native-craft",
   "version": "1.0.1",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md"
-  ],
+  "files": ["dist", "README.md"],
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "build": "del /F /Q dist && tsc && tsc -m es6 --outDir lib-esm"
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "build": "rm rf dist && tsc && tsc -m es6 --outDir lib-esm && yalc publish && yalc push"
   },
   "dependencies": {
-    "@expo/vector-icons": "^14.0.4",
-    "@react-navigation/bottom-tabs": "^7.2.0",
-    "@react-navigation/native": "^7.0.14",
-    "expo": "^52.0.30",
+    "expo": "~52.0.29",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
     "react-native": "0.76.6",
