@@ -7,10 +7,18 @@
     "jsx": "react-native",
     "moduleResolution": "node",
     "target": "es6",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "example"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "example"
+  ],
+  "extends": "expo/tsconfig.base"
 }
