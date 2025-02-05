@@ -12,3 +12,11 @@
         - Eliminados multiples archivos para ejecutar correctamente el proyecto.
         - Modificado package.json y tsconfig.json para empaquetar y publicar libreria.
     Observaciones:
+
+2025/02/05 Components y Screen - Valentina Rincon
+    Cambios:
+        - Modificado componente Button en \Button.tsx
+        - Eliminados multiples archivos para resolver conflictos de ejecucion.
+        - Modificado package.json y tsconfig.json deshacer el empaquetado de componentes ya que esto generó conflictos al ejecutar el proyecto.
+    Observaciones:
+    
