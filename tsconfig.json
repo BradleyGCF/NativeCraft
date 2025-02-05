@@ -4,6 +4,13 @@
     "declaration": true,
     "declarationDir": "dist",
     "strict": true,
-    "types": ["@types/babel__core"]
-  }
+    "jsx": "react-native",
+    "moduleResolution": "node",
+    "target": "es6",
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "example"]
 }
