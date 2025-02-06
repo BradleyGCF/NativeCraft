@@ -20,3 +20,9 @@
         - Modificado package.json y tsconfig.json deshacer el empaquetado de componentes ya que esto generó conflictos al ejecutar el proyecto.
     Observaciones:
     
+2025/02/06 Components y Screen - Valentina Rincon
+    Cambios:
+        - Se modificaron los archivos package.json y tsconfig.json para probar alternativas de empaquetado.
+        - Surgieron varios errores haciendo estas pruebas por lo tanto no se reflejan cambios en estos dos archivos ya que esto podria afectar progresivamente el proyecto.
+        - Se instalaron 3 compiladores para empaquetar los componentes sin embargo no se da solucion alguna.
+    Observaciones: Mañana continuare trabajando en otra alternativa.
