@@ -3,13 +3,13 @@ import { TouchableOpacity, StyleSheet ,Text } from 'react-native';
 
 interface ButtonProps {
   title: string;
-  onPress: () => void;
+  onPress?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
+export const ButtonComponent: React.FC<ButtonProps> = ({ title, onPress }) => {
   const handlePress = () => {
     console.log('Presionado!');
-    onPress();
+    onPress?.();
   };
 
   return (

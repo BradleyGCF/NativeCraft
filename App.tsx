@@ -1,6 +1,6 @@
 import React from "react";
-import { Navigation } from "./src/Navigation";
+import { ButtonComponent } from './src/ButtonComponent';
 
 export default function App() {
-  return <Navigation />;
+  return <ButtonComponent title="hola"/>;
 }
