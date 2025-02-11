@@ -1,6 +1,6 @@
 // import React, { useState } from "react";
 // import { Modal, StyleSheet, View, Text } from "react-native";
-// import { ButtonComponent } from '../Button/Button';
+// import { ButtonComponent } from "../ButtonComponent";
 
 // export const ModalComponent = () => {
 //   const [visible, setVisible] = useState(false);

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "lib": ["ESNext"], 
     "jsx": "react",
     "outDir": "dist",
     "rootDir": "src",
@@ -11,7 +12,8 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "allowJs": false,
-    "strict": true
+    "strict": true,
+    "types": ["react-native"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
