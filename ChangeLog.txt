@@ -34,4 +34,9 @@
         - Se logró empaquetar un solo componente sin embargo a lahora de importarlo en otro proyecto está generando errores y es algo en lo que ya se esta trabajando \Button.tsx
     Observaciones:
 
-    
+    2025/02/11 Components y Screen - Valentina Rincon
+    Cambios:
+        - Se modificó la configuracion de empaquetado en tsconfig.json y package.json
+        - Se renombraron algunos componentes para legibilidad entre el nombre de los componentes en la libreria y react native (InputComponent.tsx, ModalComponent.tsx, SwitchComponent.tsx)
+        - Exportados componentes para su compilacion en index.ts
+    Observaciones:
