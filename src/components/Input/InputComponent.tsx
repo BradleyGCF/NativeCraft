@@ -1,17 +1,19 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, TextInput } from "react-native";
+import { SafeAreaView, StyleSheet, TextInput, TextStyle } from "react-native";
 
 interface InputProps {
-  text: string;
+  placeholder: string;
+  inputStyle?: TextStyle;
 }
 
-export const InputComponent: React.FC<InputProps> = ({ text }) => {
+export const InputComponent: React.FC<InputProps> = ({ placeholder, inputStyle, ...props  }) => {
   return (
     <SafeAreaView style={styles.container}>
       <TextInput
-        style={styles.input}
-        placeholder={text}
         keyboardType="default"
+        placeholder={placeholder}
+        style={StyleSheet.flatten([styles.input, inputStyle])}
+        {...props}
       />
     </SafeAreaView>
   );

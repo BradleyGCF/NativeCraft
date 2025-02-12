@@ -40,3 +40,9 @@
         - Se renombraron algunos componentes para legibilidad entre el nombre de los componentes en la libreria y react native (InputComponent.tsx, ModalComponent.tsx, SwitchComponent.tsx)
         - Exportados componentes para su compilacion en index.ts
     Observaciones:
+
+    2025/02/12 Components y Screen - Valentina Rincon
+    Cambios:
+        - Se modificaron el resto de componentes para darle soporte a la personalizacion de estilos cuando se use en otro proyecto (InputComponent.tsx, ModalComponent.tsx, SwitchComponent.tsx)
+        - Modificados package.json y tsconfig.json para compilar componentes y cambiar version de libreria
+    Observaciones: Dar soporte de personalizacion de estilos al navbar.

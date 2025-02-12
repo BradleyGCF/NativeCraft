@@ -1,15 +1,25 @@
 import React, { useState } from "react";
-import { Modal, StyleSheet, View, Text } from "react-native";
+import { Modal, StyleSheet, View, ViewStyle } from "react-native";
 import { ButtonComponent } from "../ButtonComponent";
+interface ModalProps {
+  modalStyle?: ViewStyle;
+  buttonStyle?: ViewStyle;
+}
 
-export const ModalComponent = () => {
+export const ModalComponent: React.FC<ModalProps> = ({
+  modalStyle,
+  buttonStyle,
+}) => {
   const [visible, setVisible] = useState(false);
   return (
-    <View style={{ marginTop: "10%" }}>
+    <View style={StyleSheet.flatten([styles.container, buttonStyle])}>
       <ButtonComponent title="Abrir Modal" onPress={() => setVisible(true)} />
       <Modal visible={visible} transparent>
-        <View style={styles.modal}>
-        <ButtonComponent title="Cerrar Modal" onPress={() => setVisible(false)} />
+        <View style={StyleSheet.flatten([styles.modal, modalStyle])}>
+          <ButtonComponent
+            title="Cerrar Modal"
+            onPress={() => setVisible(false)}
+          />
         </View>
       </Modal>
     </View>
@@ -17,9 +27,12 @@ export const ModalComponent = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: "10%",
+  },
   modal: {
     marginHorizontal: 80,
     padding: 10,
-    marginTop: "58%"
+    marginTop: "58%",
   },
 });
