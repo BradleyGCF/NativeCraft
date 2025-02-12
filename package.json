@@ -1,9 +1,9 @@
 {
   "name": "nativecraft",
   "license": "0BSD",
-  "version": "1.0.15",
+  "version": "1.0.20",
   "main": "index.ts",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "src/",
     "dist/*",
@@ -20,7 +20,6 @@
     "@react-navigation/native": "^7.0.14",
     "expo": "52.0.32",
     "expo-status-bar": "~2.0.1",
-    "nativewind": "^4.1.23",
     "react": "18.3.1",
     "react-native": "0.76.7",
     "react-native-gesture-handler": "~2.20.2",
@@ -31,8 +30,6 @@
     "@babel/core": "^7.25.2",
     "@types/babel__core": "^7.20.5",
     "@types/react": "~18.3.12",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.2",
     "typescript": "^5.7.3"
   },
   "private": false

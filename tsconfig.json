@@ -15,6 +15,7 @@
     "esModuleInterop": true,
     "allowJs": false,
     "strict": true,
+    "skipLibCheck": false,
     "types": [
       "react-native"
     ]
