@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ESNext"
-    ],
+    "lib": ["ESNext"], 
     "jsx": "react",
     "outDir": "dist",
     "rootDir": "src",
@@ -16,16 +14,8 @@
     "allowJs": false,
     "strict": true,
     "skipLibCheck": false,
-    "types": [
-      "react-native"
-    ]
+    "types": ["react-native"]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "extends": "expo/tsconfig.base"
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
