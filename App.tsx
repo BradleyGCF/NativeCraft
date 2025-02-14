@@ -1,6 +1,12 @@
-import React from "react";
-import { ButtonComponent } from './src/components/ButtonComponent';
+import React, { useState } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { Tabs } from './src/Navigation';
 
 export default function App() {
-  return <ButtonComponent title="Hola"/>;
+
+  return (
+      <NavigationContainer>
+        <Tabs />
+      </NavigationContainer>
+  );
 }

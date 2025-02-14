@@ -46,3 +46,12 @@
         - Se modificaron el resto de componentes para darle soporte a la personalizacion de estilos cuando se use en otro proyecto (InputComponent.tsx, ModalComponent.tsx, SwitchComponent.tsx)
         - Modificados package.json y tsconfig.json para compilar componentes y cambiar version de libreria
     Observaciones: Dar soporte de personalizacion de estilos al navbar.
+
+    2025/02/12 Components y Screen - Valentina Rincon
+    Cambios:
+        - Modificado componente Navigation para dar soporte de personalizacion de estilos de tabs en Navigation.tsx
+        - Modificados package.json y tsconfig.json para compilar componentes y cambiar version de libreria
+        - Modificados componentes Home.tsx y SettingScreen.tsx renderizar componentes a través de las tabs
+        - Exportados componentes Navigation.tsx, Home.tsx y SettingScreen.tsx para empaquetarlos en  index.ts
+        - Creado archivo global.d.ts para dar soporte de tipado de iconos en las tabs.
+    Observaciones:

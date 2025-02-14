@@ -13,9 +13,9 @@
     "esModuleInterop": true,
     "allowJs": false,
     "strict": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "types": ["react-native"]
   },
-  "include": ["src"],
+  "include": ["src", "global.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
