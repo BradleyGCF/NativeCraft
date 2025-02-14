@@ -1,54 +1,46 @@
 import React from "react";
-import { createBottomTabNavigator, BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { NavigationContainer } from "@react-navigation/native";
-import { Home } from "./screens/Home";
-import { SettingScreen } from "./screens/SettingScreen";
+import { createBottomTabNavigator, BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
 
-interface TabsProps {
-  screenOptions?: Partial<BottomTabNavigationOptions>;
+export interface ScreenConfig {
+  component: React.ComponentType<any>;
+  iconName?: React.ComponentProps<typeof Ionicons>["name"];
+  customIcon?: ({ color, size }: { color: string; size: number }) => React.ReactNode;
 }
 
-export const Tabs: React.FC<TabsProps> = ({ screenOptions = {} }) => {
+export interface NavigationProps {
+  screens: { [key: string]: ScreenConfig };
+  tabBarOptions?: Partial<BottomTabNavigationOptions>;
+}
+
+export const Navigation: React.FC<NavigationProps> = ({ screens, tabBarOptions = {} }) => {
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: "blue",
         tabBarInactiveTintColor: "gray",
-        ...screenOptions,
+        ...tabBarOptions,
       }}
     >
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarIcon: ({ color }) => <Ionicons name="home" color={color} size={25} />,
-          tabBarBadge: 2,
-        }}
-      />
-      <Tab.Screen
-        name="Settings"
-        component={SettingScreen}
-        options={{
-          tabBarIcon: ({ color }) => <Ionicons name="settings" color={color} size={25} />,
-        }}
-      />
+      {Object.entries(screens).map(([name, config]) => (
+        <Tab.Screen
+          key={name}
+          name={name}
+          component={config.component}
+          options={{
+            tabBarIcon: ({ color, size }) => {
+              if (config.customIcon) {
+                return config.customIcon({ color, size });
+              } else if (config.iconName) {
+                return <Ionicons name={config.iconName} color={color} size={size} />;
+              }
+              return null;
+            },
+          }}
+        />
+      ))}
     </Tab.Navigator>
-  );
-};
-
-export const Navigation = () => {
-  return (
-    <NavigationContainer>
-      <Tabs
-        screenOptions={{
-          tabBarActiveTintColor: "green",
-          tabBarInactiveTintColor: "red",
-          tabBarStyle: { backgroundColor: "#222" }
-        }}
-      />
-    </NavigationContainer>
   );
 };

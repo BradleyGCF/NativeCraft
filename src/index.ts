@@ -3,5 +3,3 @@ export { InputComponent } from "./components/Input/InputComponent";
 export { ModalComponent } from "./components/Modal/ModalComponent";
 export { SwitchComponent } from './components/Switch/SwitchComponent';
 export { Navigation } from './Navigation';
-export { Home }from './screens/Home';
-export { SettingScreen } from './screens/SettingScreen';

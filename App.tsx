@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { Tabs } from './src/Navigation';
+import { Navigation } from './src/Navigation';
 
 export default function App() {
 
   return (
       <NavigationContainer>
-        <Tabs />
+        <Navigation />
       </NavigationContainer>
   );
 }

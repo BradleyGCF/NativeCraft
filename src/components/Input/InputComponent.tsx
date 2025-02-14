@@ -1,16 +1,18 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, TextInput, TextStyle } from "react-native";
+import { KeyboardTypeOptions, SafeAreaView, StyleSheet, TextInput, TextStyle } from "react-native";
 
 interface InputProps {
   placeholder: string;
   inputStyle?: TextStyle;
+  keyboardType?: KeyboardTypeOptions;
+  
 }
 
-export const InputComponent: React.FC<InputProps> = ({ placeholder, inputStyle, ...props  }) => {
+export const InputComponent: React.FC<InputProps> = ({ placeholder, inputStyle, keyboardType = "default", ...props  }) => {
   return (
     <SafeAreaView style={styles.container}>
       <TextInput
-        keyboardType="default"
+        keyboardType={keyboardType}
         placeholder={placeholder}
         style={StyleSheet.flatten([styles.input, inputStyle])}
         {...props}

@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { View, Text, Switch, StyleSheet, ViewStyle, TextStyle } from "react-native";
 
 interface SwitchProps {
+  offText?: string;
+  onText?: string;
   switchStyle?: ViewStyle;
   textStyle?: TextStyle;
+  thumbColor?: string;
   trackColorFalse?: string;
   trackColorTrue?: string;
-  thumbColor?: string;
 }
 
 export const SwitchComponent: React.FC<SwitchProps> = ({
+  onText = 'Activado',
+  offText = 'Desactivado',
   switchStyle,
   textStyle,
   trackColorFalse = "#767577",
@@ -23,7 +27,7 @@ export const SwitchComponent: React.FC<SwitchProps> = ({
   return (
     <View style={StyleSheet.flatten([styles.container, switchStyle])}>
       <Text style={StyleSheet.flatten([styles.text, textStyle])}>
-        {isEnabled ? "Activado" : "Desactivado"}
+        {isEnabled ? onText : offText}
       </Text>
       <Switch
         onValueChange={toggleSwitch}
