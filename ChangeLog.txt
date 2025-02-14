@@ -55,3 +55,13 @@
         - Exportados componentes Navigation.tsx, Home.tsx y SettingScreen.tsx para empaquetarlos en  index.ts
         - Creado archivo global.d.ts para dar soporte de tipado de iconos en las tabs.
     Observaciones:
+
+    2025/02/14 Components y Screen - Valentina Rincon
+    Cambios:
+        - Modificado componente Navigation para dar soporte de personalizacion de estilos de tabs en Navigation.tsx
+        - Modificados package.json y tsconfig.json para compilar componentes y cambiar version de libreria
+        - Eliminados componentes Home.tsx y SettingScreen.tsx
+        - Eliminada exportacion de componentes Home.tsx y SettingScreen.tsx en index.ts
+        - Modificar componentes SwitchComponent.tsx e InputComponent.tsx para dar soporte de personalizacionde estilos
+        - Modificado archivo para documentacion del uso de la libreria en README.md
+    Observaciones:
